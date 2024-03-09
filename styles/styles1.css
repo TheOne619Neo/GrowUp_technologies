@@ -1,0 +1,26 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:'Courier New', monospace ;
+    font-weight: normal;  
+}
+
+body{
+    padding: 0;
+    margin: 0;
+     background: linear-gradient(to right, #80498f, #541b2e);     /*background color , change*/
+}
+
+.grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid red;
+}
