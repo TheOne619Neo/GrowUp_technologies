@@ -13,7 +13,7 @@ body{
 .grid{
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
@@ -22,5 +22,21 @@ body{
 .grid > button{
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid red;
+    border: 1px solid red;                                        /*border colour  */
+    outline: none;
+    background-color: aqua;                                       /*rgba 255, 255,255, 75 */
+}
+
+.grid > button:hover{
+    background-color: rgba(255, 255,255, 75);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output_display{
+
+    grid-column: 1/-1;                                             /*control display size */
+    background-color:black;
 }
