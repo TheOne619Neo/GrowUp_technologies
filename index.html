@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculat</title>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/styles1.css">                       <!-- import css file, styling   -->
+    <script src="functionality/calculations.js" defer></script>             <!-- import javascript file, functionality of calc. "defer" loads html content first before executing script.   -->
 </head>
+
 <body>
-    
+     <div class="grid">                                                    <!--contains calculator elements  -->
+        <div class="output_display">                                       <!--contains calculator output and input display -->
+            <div class = "first_input_value"> </div>                       <!--innitial input value operand display, previous-->
+            <div class = "second_input_value"> </div>                      <!--current input value operand display -->
+        </div>
+        <button class="span-two">AC</button>
+        <button>DEL</button>
+        <button>÷</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>*</button>
+        <button>4</button>                                                  
+        <button>5</button>                                                 <!--calculator buttons -->
+        <button>6</button>
+        <button>+</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button class="span-two">=</button>
+     </div>
 </body>
 </html>
