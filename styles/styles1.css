@@ -28,7 +28,7 @@ body{
 }
 
 .grid > button:hover{
-    background-color: rgba(255, 255,255, 75);
+    background-color: rgba(255, 255,255, .75);
 }
 
 .span-two{
@@ -38,5 +38,31 @@ body{
 .output_display{
 
     grid-column: 1/-1;                                             /*control display size */
-    background-color:black;
+    background-color:rgba(0, 0,0, .50); 
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+
 }
+
+.output_display .first_input_value{
+     color:rgba(245, 16, 16, 0.75);                                       /*colour inside display box value text   */
+     font-size: 1.5rem;
+}
+
+.output_display .second_input_value{
+    color: rgb(255, 240, 240);                                         /*colour inside display box value text   */
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
