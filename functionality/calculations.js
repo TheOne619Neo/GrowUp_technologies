@@ -14,3 +14,28 @@ const deleteButton = document.querySelector('[data-delete]')
 const clearButton = document.querySelector('[data-all-clear]') 
 const firstOperant = document.querySelector('[data-first-input-value]')
 const secondperant = document.querySelector('[data-second-input-value]')
+
+
+clearButton(){
+
+}
+
+deleteButton(){
+
+}
+
+updateDisplay(){
+    
+}
+
+result(){// display calc 
+
+}
+
+appendNumber(number){ //appends values selectted
+
+}
+
+chooseOperation(operand){//select operands
+
+}
