@@ -1,8 +1,8 @@
 // create class to store information of what input is inserted on calculator
 class Calculator{
-    constructor(firstOperant, secondperant){
+    constructor(firstOperant, secondOperant){
         this.firstOperant = firstOperant
-        this.secondperant = secondperant
+        this.secondOperant = secondOperant
         this.clearButton()  //set all inputs to defualt ,empty when calc starts
     }
 
@@ -19,19 +19,55 @@ deleteButton(){
     }
 
 updateDisplay(){
-    this.firstOperant.innerText = this.first
+    
+    this.secondOperant.innerText = this.second
+    this.firstOperant.innerText = this.first    //this line, trying to put second input below the other after entering operation
+    
     }
 
-result(){// display calc 
-
-    }
 
 appendNumber(number){ //appends values selectted
-    this.first =number
+    if(number == '.' && this.second.includes('.'))
+        return
+    this.second =this.second.toString() + number.toString()//number
     }
 
 chooseOperation(operand){//select operands
+    if(this.second == '')
+        return
+    if(this.first != ''){
+        this.result()
+    }
+    this.operation = operand
+    this.first= this.second
+    this.second = ""
+    }
 
+result(){// display calc 
+        let computation
+        const prev =parseFloat(this.firstOperant)
+        const current =parseFloat(this.secondOperant)
+        if(isNaN(prev) || isNaN(current))
+            return
+        switch(this.operation){
+            case '+':
+                computation = prev+current
+                break
+            case '-':
+                computation = prev-current
+                break
+            case '*':
+                computation = prev*current
+                break
+            case '÷':
+                computation = prev/current
+                break
+            default:
+                return
+        }
+        this.secondOperant = computation
+        this.operation = undefined
+        this.firstOperant = ''
     }
 
 }
@@ -48,4 +84,14 @@ const calculator = new Calculator(firstOperant, secondperant )
 
 numberButtons.forEach(button=>{button.addEventListener('click',()=>{calculator.appendNumber(button.innerText)
 calculator.updateDisplay()})
+})
+
+
+operationButtons.forEach(button=>{button.addEventListener('click',()=>{calculator.chooseOperation(button.innerText)
+    calculator.updateDisplay()})
+    })
+
+
+equalButton.addEventListener('click',button=>{calculator.result() 
+    calculator.updateDisplay()
 })
