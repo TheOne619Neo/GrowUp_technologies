@@ -1,5 +1,6 @@
 // create class to store information of what input is inserted on calculator
 class Calculator{
+   
     constructor(firstOperant, secondOperant){
         this.firstOperant = firstOperant
         this.secondOperant = secondOperant
@@ -8,47 +9,54 @@ class Calculator{
 
 
 
-clearButton(){
-    this.first = ""
-    this.second = ''
-    this.operation = undefined
-    }
+    clearButton(){
+        this.first = ""
+        this.second = ''
+        this.operation = undefined
+        }
 
-deleteButton(){
+    deleteButton(){
 
-    }
+        }
 
-updateDisplay(){
-    
-    this.secondOperant.innerText = this.second
-    this.firstOperant.innerText = this.first    //this line, trying to put second input below the other after entering operation
-    
-    }
+    updateDisplay(){
+        console.log("second :" + this.second, "first :" + this.first)
+        
+        this.firstOperant.innerText = this.first  
+        this.secondOperant.innerText = this.second
+
+        //this line, trying to put second input below the other after entering operation
+        
+        }
 
 
-appendNumber(number){ //appends values selectted
-    if(number == '.' && this.second.includes('.'))
-        return
-    this.second =this.second.toString() + number.toString()//number
-    }
+    appendNumber(number){ //appends values selectted
+        if(number == '.' && this.second.includes('.'))
+            return
+        this.second =this.second.toString() + number.toString()//number
+        }
 
-chooseOperation(operand){//select operands
-    if(this.second == '')
-        return
-    if(this.first != ''){
-        this.result()
-    }
-    this.operation = operand
-    this.first= this.second
-    this.second = ""
-    }
+    chooseOperation(operand){//select operands
+     
+        if(this.second == '')
+            return
+        if(this.first != ''){
+            this.result()
+        }
 
-result(){// display calc 
+        this.operation = operand
+        this.first= this.second
+        this.second = ""
+        }
+
+    result(){// display calc 
         let computation
-        const prev =parseFloat(this.firstOperant)
-        const current =parseFloat(this.secondOperant)
+        const prev =parseFloat(this.firstOperant.innerText)
+        const current =parseFloat(this.secondOperant.innerText)
+        
         if(isNaN(prev) || isNaN(current))
             return
+      
         switch(this.operation){
             case '+':
                 computation = prev+current
@@ -65,9 +73,13 @@ result(){// display calc
             default:
                 return
         }
-        this.secondOperant = computation
+        
+
+        this.second = " "
         this.operation = undefined
-        this.firstOperant = ''
+        this.first = computation
+
+    
     }
 
 }

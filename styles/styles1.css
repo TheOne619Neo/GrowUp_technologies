@@ -38,7 +38,7 @@ body{
 .output_display{
 
     grid-column: 1/-1;                                             /*control display size */
-    background-color:rgba(0, 0,0, .50); 
+    background-color:rgba(246, 166, 166, 0.5); 
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -50,7 +50,7 @@ body{
 }
 
 .output_display .first_input_value{
-     color:rgba(245, 16, 16, 0.75);                                       /*colour inside display box value text   */
+     color:rgba(233, 214, 214, 0.75);                                       /*colour inside display box value text   */
      font-size: 1.5rem;
 }
 
